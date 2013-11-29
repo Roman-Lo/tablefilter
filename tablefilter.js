@@ -105,7 +105,7 @@ if (!jQuery) { throw new Error("Table Filter requires jQuery") }
 			types.forEach(function (item) {
 				$tr.data(item.type, $tr.attr('filter-' + item.type) == 'true').removeAttr('filter-' + item.type)
 			})
-			if (that.options.defaultfiltby !== undefined && $tr.data(that.options.defaultfiltby)) {
+			if (that.options.defaultfiltby !== undefined && !$tr.data(that.options.defaultfiltby)) {
 				$tr.hide()
 			}
 		})
